@@ -1,0 +1,12 @@
+---
+imports:
+  - resource: services/
+
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    App\Controller\:
+        resource: '../src/Controller/*.php'

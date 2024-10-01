@@ -1,0 +1,7 @@
+Query:
+    type: object
+    config:
+        fields:
+            hello:
+                type: "String"
+                resolve: "@=resolver('default_resolver').hello()"

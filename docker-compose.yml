@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # Backend Symfony
+  back:
+    build:
+      context: ./back
+    container_name: symfony-back
+    volumes:
+      - ./back:/var/www
+    ports:
+      - "8000:8000"
+    environment:
+      - SYMFONY_ENV=dev
+    command: php -S 0.0.0.0:8000 -t public
+
+  # Frontend React
+  front:
+    build:
+      context: ./front
+    container_name: react-front
+    volumes:
+      - ./front:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: npm start

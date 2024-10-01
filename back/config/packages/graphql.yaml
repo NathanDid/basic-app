@@ -1,0 +1,17 @@
+overblog_graphql:
+  definitions:
+    schema:
+      query: RootQuery
+      mutation: RootMutation
+
+    mappings:
+      types:
+        - type: attribute
+          dir: '%kernel.project_dir%/src/Application/HTTP/GraphQL'
+          suffix: ~
+
+when@dev:
+  overblog_graphql:
+    definitions:
+      show_debug_info: true
+      config_validation: "%kernel.debug%"

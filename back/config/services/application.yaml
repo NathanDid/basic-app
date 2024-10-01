@@ -1,0 +1,14 @@
+---
+services:
+  _defaults:
+    public: false
+    autowire: true
+    autoconfigure: true
+
+  App\Application\HTTP\GraphQL\Query\:
+    public: true
+    resource: '%kernel.project_dir%/src/Application/HTTP/GraphQL/Query/*.php'
+
+  App\Application\HTTP\GraphQL\Mutation\:
+    public: true
+    resource: '%kernel.project_dir%/src/Application/HTTP/GraphQL/Mutation/*.php'
